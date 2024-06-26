@@ -38,6 +38,7 @@ validate $? "enabling docker"
 
 #to add ec2-user to docker group so that ec2-user can run the docker commands
 usermod -aG docker ec2-user
+validate $? "adding ec2-user to the docker group"
 
 #once the ec2-user is added to the docker group he need to logout and login to run the docker commands
 echo -e "$R logout and login again to run docker commands $N"
