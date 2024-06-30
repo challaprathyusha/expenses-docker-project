@@ -1,5 +1,5 @@
 #version is deprecated
-version: '3.8'
+#version: '3.8'
 name: expense
 networks:
   default:
