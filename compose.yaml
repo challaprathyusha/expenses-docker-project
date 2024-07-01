@@ -4,11 +4,18 @@ name: expense
 networks:
   default:
     name: expense
+volumes:
+  mysql:
+    external: true #if true you need to create it manually using docker volume create mysql
 services:
   mysql:
     build: ./mysql
     image: mysql:v1.0
     container_name: mysql #--name mysql
+    volumes:
+    - source: mysql
+      target: /var/lib/mysql #in mysql this is the path to which we need to mount the volume 
+      type: volume # -v volume-name:/path/in/container
   backend:
     build: ./backend
     image: backend:v1.0
