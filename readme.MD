@@ -3,7 +3,8 @@
 ## 1. Use Official and Verified Images
 - **Official Images:** Start with official images from Docker Hub when possible, as they are maintained and updated regularly.
 - **Minimal Base Images:** Use minimal base images (like `alpine`) to reduce the attack surface and image size.
-
+- We should check for application compatibility with the containers, if application size is more than 500MB, we should make it compatible to be run in containers. 
+- Large size applications are not suitable for containerization, it leads to the performance issue of an application.
 ## 2. Keep Images Small
 - **Multi-Stage Builds:** Use multi-stage builds to minimize the final image size by only including necessary components.
 - **Remove Unnecessary Files:** Clean up package lists, cache files, and other unnecessary files to keep the image lean.
